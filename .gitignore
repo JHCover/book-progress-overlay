@@ -1,9 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules  # Remove leading / to ignore node_modules in all subdirectories
 /.pnp
 .pnp.js
+
+# server-specific
+server/node_modules  # Explicitly ignore server/node_modules (redundant but clear)
 
 # testing
 /coverage
@@ -17,7 +20,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+/server/.env  # Ignore the server's .env file with sensitive data
 
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
